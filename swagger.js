@@ -6,7 +6,7 @@ module.exports = {
     description: 'API para registro, login e checkout com boleto ou cartão.'
   },
   paths: {
-    '/api/users/register': {
+    '/users/register': {
       post: {
         summary: 'Registrar usuário',
         requestBody: {
@@ -31,7 +31,7 @@ module.exports = {
         }
       }
     },
-    '/api/users/login': {
+    '/users/login': {
       post: {
         summary: 'Login do usuário',
         requestBody: {
@@ -55,7 +55,7 @@ module.exports = {
         }
       }
     },
-    '/api/checkout': {
+    '/checkout': {
       post: {
         summary: 'Realizar checkout',
         security: [{ bearerAuth: [] }],
