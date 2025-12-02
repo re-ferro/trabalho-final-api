@@ -14,7 +14,7 @@ describe('Checkout Controller', () => {
     describe('POST /checkout', () => {
 
         beforeEach(async () => {
-            const respostaLogin = await request('http://localhost:3000')
+            const respostaLogin = await request('http://localhost:3001')
                 .post('/users/login')
                 .send({
                     email: "renata@teste.com",
@@ -25,7 +25,7 @@ describe('Checkout Controller', () => {
         });
 
         it('Quando informo ID de produto valido tem que retornar 200', async () => {
-            const resposta = await request('http://localhost:3000')
+            const resposta = await request('http://localhost:3001')
                 .post('/checkout')
                 .set('Authorization', `Bearer ${token}`)
                 .send({
@@ -49,7 +49,7 @@ describe('Checkout Controller', () => {
         });
 
         it('Quando informo ID de produto invalido tem que retornar 400', async () => {
-            const resposta = await request('http://localhost:3000')
+            const resposta = await request('http://localhost:3001')
                 .post('/checkout')
                 .set('Authorization', `Bearer ${token}`)
                 .send({
